@@ -12,8 +12,30 @@ let books = [
     { title: "Odd Man Out: A Year on the Mound with a Minor League Misfit", genre: "Biography", author: "Matt McCarthy", year: "2009", imageURL: "https://images-na.ssl-images-amazon.com/images/I/51ckIUkppyL._SX329_BO1,204,203,200_.jpg" }
 ]
 
+// Displays all the books
 app.get('/books', (req, res) => {
     res.json(books)
+})
+
+// Add new books
+app.post('/books', (req, res) => {
+
+    let title = req.body.title
+    let genre = req.body.genre
+    let author = req.body.author
+    let year = req.body.year
+    let imageURL = req.body.imageURL
+
+    books.push({
+        title: title,
+        genre: genre,
+        author: author,
+        year: year,
+        imageURL: imageURL
+    })
+
+    res.json({ success: true })
+
 })
 
 app.listen(3001, () => {
