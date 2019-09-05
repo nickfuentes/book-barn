@@ -1,14 +1,31 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 
 class BookList extends Component {
-    constructor(props) {
-        super(props)
+
+    constructor() {
+        super()
+        this.state = {
+            books: []
+        }
+
+        this.fetchBooks()
+    }
+
+
+    fetchBooks = () => {
+        fetch('http://localhost:3001/books')
+            .then(response => response.json())
+            .then(books => {
+                console.log(books)
+                this.setState({
+                    books: books
+                })
+            })
     }
 
     render() {
-
-        let bookItems = this.props.books.map(book => {
+        let bookItems = this.state.books.map(book => {
             return <div className="book-div">
                 <img src={book.imageURL}></img>
                 <h2>{book.title}</h2>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 
 class AddBook extends Component {
     constructor(props) {
@@ -41,7 +41,7 @@ class AddBook extends Component {
     }
 
     render() {
-        return <div>
+        return <div className="add-book-form">
             <h3>Title:</h3>
             <input type="text" name="title" onChange={this.handleTextBoxChange} />
 
