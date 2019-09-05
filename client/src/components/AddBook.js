@@ -29,8 +29,9 @@ class AddBook extends Component {
                 year: this.state.year,
                 imageURL: this.state.imageURL
             })
+        }).then(() => {
+            this.props.history.push("/all-books")
         })
-
     }
 
     handleTextBoxChange = (e) => {
