@@ -13,8 +13,8 @@ class BookList extends Component {
                 <img src={book.imageURL}></img>
                 <h2>{book.title}</h2>
                 <h4>Genre: {book.genre}</h4>
-                <h4>Author:{book.author}</h4>
-                <h4>Year:{book.year}</h4>
+                <h4>Author: {book.author}</h4>
+                <h4>Year: {book.year}</h4>
             </div>
         })
 

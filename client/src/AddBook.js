@@ -23,28 +23,41 @@ class AddBook extends Component {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                title: this.state.title
+                title: this.state.title,
+                genre: this.state.genre,
+                author: this.state.author,
+                year: this.state.year,
+                imageURL: this.state.imageURL
             })
         })
 
     }
 
+    handleTextBoxChange = (e) => {
+
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
 
     render() {
-
-        let bookItems = this.props.books.map(book => {
-            return <div className="book-div">
-                <img src={book.imageURL}></img>
-                <h2>{book.title}</h2>
-                <h4>Genre: {book.genre}</h4>
-                <h4>Author:{book.author}</h4>
-                <h4>Year:{book.year}</h4>
-            </div>
-        })
-
         return <div>
-            <h1>List of Books</h1>
-            {bookItems}
+            <h3>Title:</h3>
+            <input type="text" name="title" onChange={this.handleTextBoxChange} />
+
+            <h3>Genre:</h3>
+            <input type="text" name="genre" onChange={this.handleTextBoxChange}></input>
+
+            <h3>Author:</h3>
+            <input type="text" name="author" onChange={this.handleTextBoxChange}></input>
+
+            <h3>Year:</h3>
+            <input type="text" name="year" onChange={this.handleTextBoxChange}></input>
+
+            <h3>Image URL:</h3>
+            <input type="text" name="imageURL" onChange={this.handleTextBoxChange}></input>
+
+            <button onClick={this.handleSave}>Add Book</button>
         </div>
     }
 }
