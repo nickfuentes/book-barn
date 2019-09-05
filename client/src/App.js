@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import AddBook from './AddBook'
 import BookList from './BookList'
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
 
   render() {
     return <div>
+      <AddBook />
       <BookList books={this.state.books} />
     </div>
   }
