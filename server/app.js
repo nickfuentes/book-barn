@@ -38,19 +38,14 @@ app.post('/add-books', (req, res) => {
 // Delete a book from the postgres database
 app.post('/delete-book', (req, res) => {
 
-    let title = req.body.title
-    let genre = req.body.genre
-    let author = req.body.author
-    let year = req.body.year
-    let imageURL = req.body.imageURL
+    let id = req.body.id
+    console.log(id)
 
-    let book = models.Book.build({
-        title: title,
-        genre: genre,
-        author: author,
-        year: year,
-        imageURL: imageURL
-    }).save()
+    models.Book.destroy({
+        where: {
+            id: id
+        }
+    })
 
     res.json({ Sucess: true })
 })
