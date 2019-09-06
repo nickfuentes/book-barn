@@ -15,7 +15,7 @@ app.get('/all-books', (req, res) => {
     })
 })
 
-// Add new books
+// Add new books to the postgres database
 app.post('/add-books', (req, res) => {
 
     let title = req.body.title
@@ -24,16 +24,35 @@ app.post('/add-books', (req, res) => {
     let year = req.body.year
     let imageURL = req.body.imageURL
 
-    books.push({
+    let book = models.Book.build({
         title: title,
         genre: genre,
         author: author,
         year: year,
         imageURL: imageURL
-    })
+    }).save()
 
-    res.json({ success: true })
+    res.json({ Sucess: true })
+})
 
+// Delete a book from the postgres database
+app.post('/delete-book', (req, res) => {
+
+    let title = req.body.title
+    let genre = req.body.genre
+    let author = req.body.author
+    let year = req.body.year
+    let imageURL = req.body.imageURL
+
+    let book = models.Book.build({
+        title: title,
+        genre: genre,
+        author: author,
+        year: year,
+        imageURL: imageURL
+    }).save()
+
+    res.json({ Sucess: true })
 })
 
 app.listen(3001, () => {

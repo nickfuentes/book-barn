@@ -24,6 +24,26 @@ class BookList extends Component {
             })
     }
 
+    handleDelete = () => {
+
+        // value is in the state 
+        fetch('http://localhost:3001/add-book', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                title: this.state.title,
+                genre: this.state.genre,
+                author: this.state.author,
+                year: this.state.year,
+                imageURL: this.state.imageURL
+            })
+        }).then(() => {
+            this.props.history.push("/all-books")
+        })
+    }
+
     render() {
         let bookItems = this.state.books.map(book => {
             return <div className="book-div">
@@ -32,6 +52,7 @@ class BookList extends Component {
                 <h4>Genre: {book.genre}</h4>
                 <h4>Author: {book.author}</h4>
                 <h4>Year: {book.year}</h4>
+                <button onClick={this.handleDelete}>Delete</button>
             </div>
         })
 
