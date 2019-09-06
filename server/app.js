@@ -39,7 +39,6 @@ app.post('/add-books', (req, res) => {
 app.post('/delete-book', (req, res) => {
 
     let id = req.body.id
-    console.log(id)
 
     models.Book.destroy({
         where: {
@@ -50,8 +49,21 @@ app.post('/delete-book', (req, res) => {
     res.json({ Sucess: true })
 })
 
-// Delete a book from the postgres database
+// Update a book from the postgres database
 app.post('/update-book', (req, res) => {
+
+    let title = req.body.title
+    let genre = req.body.genre
+    let author = req.body.author
+    let year = req.body.year
+    let imageURL = req.body.imageURL
+
+    console.log(title)
+    console.log(genre)
+    console.log(author)
+    console.log(year)
+    console.log(imageURL)
+
 
     res.json("Should display a book to update")
 })

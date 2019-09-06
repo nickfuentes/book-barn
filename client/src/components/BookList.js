@@ -17,7 +17,7 @@ class BookList extends Component {
         fetch('http://localhost:3001/all-books')
             .then(response => response.json())
             .then(books => {
-                console.log(books)
+
                 this.setState({
                     books: books
                 })
