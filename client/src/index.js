@@ -6,7 +6,8 @@ import * as serviceWorker from './serviceWorker';
 import { BaseLayout } from './components/BaseLayout'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import AddBook from './components/AddBook'
-import BookList from './components/BookList';
+import BookList from './components/BookList'
+import UpdateBook from './components/UpdateBook'
 
 ReactDOM.render(
     <BrowserRouter>
@@ -15,6 +16,7 @@ ReactDOM.render(
                 <Route path="/" exact component={App} />
                 <Route path="/all-books" component={BookList} />
                 <Route path="/add-book" component={AddBook} />
+                <Route path="/update-book" component={UpdateBook} />
             </Switch>
         </BaseLayout>
     </BrowserRouter>

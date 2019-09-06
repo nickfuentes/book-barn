@@ -8,7 +8,6 @@ export class Menu extends Component {
             <li><NavLink to="/">Home</NavLink></li>
             <li><NavLink to="/all-books">View Books</NavLink></li>
             <li><NavLink to="/add-book">Add Books</NavLink></li>
-
         </ul>
     }
 }

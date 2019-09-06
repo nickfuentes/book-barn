@@ -50,6 +50,12 @@ app.post('/delete-book', (req, res) => {
     res.json({ Sucess: true })
 })
 
+// Delete a book from the postgres database
+app.post('/update-book', (req, res) => {
+
+    res.json("Should display a book to update")
+})
+
 app.listen(3001, () => {
     console.log('Server is running...')
 })
