@@ -17,7 +17,7 @@ class AddBook extends Component {
     handleSave = () => {
 
         // value is in the state 
-        fetch('http://localhost:3001/books', {
+        fetch('http://localhost:3001/add-books', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
