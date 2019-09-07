@@ -49,6 +49,19 @@ app.post('/delete-book', (req, res) => {
     res.json({ Sucess: true })
 })
 
+// Get a book from the postgres database
+app.get('/update-book', (req, res) => {
+
+    models.Book.findOne({
+        where: {
+            id: 19
+        }
+    }).then(book => {
+        res.json(book)
+    })
+
+})
+
 // Update a book from the postgres database
 app.post('/update-book', (req, res) => {
 
@@ -58,14 +71,21 @@ app.post('/update-book', (req, res) => {
     let year = req.body.year
     let imageURL = req.body.imageURL
 
-    console.log(title)
-    console.log(genre)
-    console.log(author)
-    console.log(year)
-    console.log(imageURL)
 
+    models.Book.update({
+        title: title,
+        genre: genre,
+        author: author,
+        year: year,
+        imageURL: imageURL
+    },
+        {
+            where: {
+                id: 19
+            }
+        })
 
-    res.json("Should display a book to update")
+    res.json({ Sucess: true })
 })
 
 app.listen(3001, () => {

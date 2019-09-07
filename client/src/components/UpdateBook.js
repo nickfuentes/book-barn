@@ -17,8 +17,21 @@ class UpdateBook extends Component {
     }
 
     fetchBook = () => {
-        console.log("Trying to fetch this book")
+
+        fetch('http://localhost:3001/update-book')
+            .then(response => response.json())
+            .then(book => {
+
+                this.setState({
+                    title: book.title,
+                    genre: book.genre,
+                    author: book.author,
+                    year: book.year,
+                    imageURL: book.imageURL
+                })
+            })
     }
+
 
     updateBook = () => {
 
@@ -50,19 +63,19 @@ class UpdateBook extends Component {
     render() {
         return <div className="add-book-form">
             <h3>Title:</h3>
-            <input type="text" name="title" onChange={this.handleTextBoxChange} />
+            <input type="text" value={this.state.title} name="title" onChange={this.handleTextBoxChange} />
 
             <h3>Genre:</h3>
-            <input type="text" name="genre" onChange={this.handleTextBoxChange}></input>
+            <input type="text" value={this.state.genre} name="genre" onChange={this.handleTextBoxChange}></input>
 
             <h3>Author:</h3>
-            <input type="text" name="author" onChange={this.handleTextBoxChange}></input>
+            <input type="text" value={this.state.author} name="author" onChange={this.handleTextBoxChange}></input>
 
             <h3>Year:</h3>
-            <input type="text" name="year" onChange={this.handleTextBoxChange}></input>
+            <input type="text" value={this.state.year} name="year" onChange={this.handleTextBoxChange}></input>
 
             <h3>Image URL:</h3>
-            <input type="text" name="imageURL" onChange={this.handleTextBoxChange}></input>
+            <input type="text" value={this.state.imageURL} name="imageURL" onChange={this.handleTextBoxChange}></input>
 
             <button onClick={this.updateBook}>Update Book</button>
         </div>
