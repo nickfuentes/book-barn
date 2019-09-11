@@ -7,7 +7,7 @@ app.use(cors())
 app.use(express.json())
 
 // Displays all the books from the postgres database
-app.get('/all-books', (req, res) => {
+app.get('/', (req, res) => {
 
     models.Book.findAll({
     }).then(books => {
@@ -54,7 +54,7 @@ app.get('/update-book', (req, res) => {
 
     models.Book.findOne({
         where: {
-            id: 20
+            id: 22
         }
     }).then(book => {
         res.json(book)
@@ -81,7 +81,7 @@ app.post('/update-book', (req, res) => {
     },
         {
             where: {
-                id: 20
+                id: 22
             }
         })
 

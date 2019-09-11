@@ -13,9 +13,8 @@ class BookList extends Component {
         this.fetchBooks()
     }
 
-
     fetchBooks = () => {
-        fetch('http://localhost:3001/all-books')
+        fetch('http://localhost:3001/')
             .then(response => response.json())
             .then(books => {
 

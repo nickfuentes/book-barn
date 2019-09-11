@@ -31,7 +31,7 @@ class AddBook extends Component {
                 imageURL: this.state.imageURL
             })
         }).then(() => {
-            this.props.history.push("/all-books")
+            this.props.history.push("/")
         })
     }
 

@@ -1,14 +1,38 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import {
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem
+} from 'reactstrap';
 import App from './App'
-import { NavLink } from 'react-router-dom'
 
 export class Menu extends Component {
     render() {
-        return <ul>
-            <li><NavLink to="/">Home</NavLink></li>
-            <li><NavLink to="/all-books">View Books</NavLink></li>
-            <li><NavLink to="/add-book">Add Books</NavLink></li>
-        </ul>
+        return <div>
+            <Nav>
+                <NavItem>
+                    <h3>Book Barn</h3>
+                </NavItem>
+                <NavItem>
+                    <NavLink tag={Link} to="/">Home</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink tag={Link} to="/add-book">Add Books</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink tag={Link} to="/favorite-book">Favorites</NavLink>
+                </NavItem>
+            </Nav>
+        </div>
     }
 }
 

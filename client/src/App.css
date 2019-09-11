@@ -54,6 +54,10 @@ img {
   padding: 30px;
 }
 
+.nav {
+  background-color: lightgoldenrodyellow;
+}
+
 .btn {
   margin: 20px;
 }
