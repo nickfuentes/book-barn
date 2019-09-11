@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
+import { Button } from 'reactstrap'
 
 class BookList extends Component {
 
@@ -54,8 +55,10 @@ class BookList extends Component {
                 <h4>Author: {book.author}</h4>
                 <h4>Year: {book.year}</h4>
                 <input type="hidden" name="id" value={book.id} />
-                <button data-id={book.id} onClick={this.handleDelete}>Delete</button>
-                <button data-id={book.id} onClick={this.handleChangeToUpdate}>Update</button>
+                <div>
+                    <Button color="primary" data-id={book.id} onClick={this.handleDelete}>Delete</Button>
+                    <Button color="primary" data-id={book.id} onClick={this.handleChangeToUpdate}>Update</Button>
+                </div>
             </div>
         })
 

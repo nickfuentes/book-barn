@@ -8,17 +8,21 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import AddBook from './components/AddBook'
 import BookList from './components/BookList'
 import UpdateBook from './components/UpdateBook'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Row, Col } from 'reactstrap';
 
 ReactDOM.render(
     <BrowserRouter>
-        <BaseLayout>
-            <Switch>
-                <Route path="/" exact component={App} />
-                <Route path="/all-books" component={BookList} />
-                <Route path="/add-book" component={AddBook} />
-                <Route path="/update-book" component={UpdateBook} />
-            </Switch>
-        </BaseLayout>
+        <Container>
+            <BaseLayout>
+                <Switch>
+                    <Route path="/" exact component={App} />
+                    <Route path="/all-books" component={BookList} />
+                    <Route path="/add-book" component={AddBook} />
+                    <Route path="/update-book" component={UpdateBook} />
+                </Switch>
+            </BaseLayout>
+        </Container>
     </BrowserRouter>
     , document.getElementById('root'));
 

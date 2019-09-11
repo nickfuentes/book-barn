@@ -54,7 +54,7 @@ app.get('/update-book', (req, res) => {
 
     models.Book.findOne({
         where: {
-            id: 19
+            id: 20
         }
     }).then(book => {
         res.json(book)
@@ -81,7 +81,7 @@ app.post('/update-book', (req, res) => {
     },
         {
             where: {
-                id: 19
+                id: 20
             }
         })
 

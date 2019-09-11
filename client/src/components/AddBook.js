@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
+import { Button } from 'reactstrap'
 
 class AddBook extends Component {
     constructor(props) {
@@ -58,7 +59,7 @@ class AddBook extends Component {
             <h3>Image URL:</h3>
             <input type="text" name="imageURL" onChange={this.handleTextBoxChange}></input>
 
-            <button onClick={this.handleSave}>Add Book</button>
+            <Button color="primary" onClick={this.handleSave}>Add Book</Button>
         </div>
     }
 }
