@@ -10,7 +10,7 @@ import BookList from './components/BookList'
 import UpdateBook from './components/UpdateBook'
 import FavoriteBook from './components/FavoriteBook'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col } from 'reactstrap';
+import { Container } from 'reactstrap';
 
 ReactDOM.render(
     <BrowserRouter>

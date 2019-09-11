@@ -35,3 +35,14 @@
 .nav {
   background-color: lightgoldenrodyellow;
 }
+
+.card {
+  width: 100%;
+}
+
+.booksListed {
+  display: flex;
+  flex-direction: column; }
+.book-div {
+  margin: 10px;
+}

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import '../App.css';
 import {
-    Card, CardImg, CardText, CardBody,
+    Card, CardImg, CardBody,
     CardTitle, CardSubtitle, Button
 } from 'reactstrap';
+import '../App.css';
 
 class BookList extends Component {
 
@@ -51,33 +51,24 @@ class BookList extends Component {
     render() {
         let bookItems = this.state.books.map(book => {
             return <div className="book-div">
-                <div>
-                    <Card>
-                        <CardImg top width="100%" src={book.imageURL} alt="Card image cap" />
-                        <CardBody>
-                            <CardTitle><h2>{book.title}</h2></CardTitle>
-                            <CardSubtitle><h4>Genre: {book.genre}</h4></CardSubtitle>
-                            <CardSubtitle><h4>Author: {book.author}</h4></CardSubtitle>
-                            <CardSubtitle><h4>Year: {book.year}</h4></CardSubtitle>
-                            <Button color="primary" data-id={book.id} onClick={this.handleDelete}>Delete</Button>
-                            <Button color="primary" data-id={book.id} onClick={this.handleChangeToUpdate}>Update</Button>
-                        </CardBody>
-                    </Card>
-                </div>
-                <img s></img>
 
+                <Card>
+                    <CardImg src={book.imageURL} alt="Card image cap" />
+                    <CardBody>
+                        <CardTitle><h2>{book.title}</h2></CardTitle>
+                        <CardSubtitle><h4>Genre: {book.genre}</h4></CardSubtitle>
+                        <CardSubtitle><h4>Author: {book.author}</h4></CardSubtitle>
+                        <CardSubtitle><h4>Year: {book.year}</h4></CardSubtitle>
+                        <Button color="primary" data-id={book.id} onClick={this.handleDelete}>Delete</Button>
+                        <Button color="primary" data-id={book.id} onClick={this.handleChangeToUpdate}>Update</Button>
+                        <input type="hidden" name="id" value={book.id} />
+                    </CardBody>
+                </Card>
 
-
-
-                <input type="hidden" name="id" value={book.id} />
-                <div>
-
-                </div>
             </div>
         })
 
-        return <div>
-            <h1>List of Books</h1>
+        return <div className="booksListed">
             {bookItems}
         </div>
     }

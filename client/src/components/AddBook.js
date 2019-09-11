@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import '../App.css';
-import { Button } from 'reactstrap'
 
 class AddBook extends Component {
     constructor(props) {
@@ -43,24 +43,31 @@ class AddBook extends Component {
     }
 
     render() {
-        return <div className="add-book-form">
-            <h3>Title:</h3>
-            <input type="text" name="title" onChange={this.handleTextBoxChange} />
-
-            <h3>Genre:</h3>
-            <input type="text" name="genre" onChange={this.handleTextBoxChange}></input>
-
-            <h3>Author:</h3>
-            <input type="text" name="author" onChange={this.handleTextBoxChange}></input>
-
-            <h3>Year:</h3>
-            <input type="text" name="year" onChange={this.handleTextBoxChange}></input>
-
-            <h3>Image URL:</h3>
-            <input type="text" name="imageURL" onChange={this.handleTextBoxChange}></input>
-
-            <Button color="primary" onClick={this.handleSave}>Add Book</Button>
-        </div>
+        return (
+            <Form>
+                <FormGroup>
+                    <Label>Title</Label>
+                    <Input type="text" name="title" onChange={this.handleTextBoxChange} />
+                </FormGroup>
+                <FormGroup>
+                    <Label>Genre</Label>
+                    <Input type="text" name="genre" onChange={this.handleTextBoxChange} />
+                </FormGroup>
+                <FormGroup>
+                    <Label>Author</Label>
+                    <Input type="text" name="author" onChange={this.handleTextBoxChange} />
+                </FormGroup>
+                <FormGroup>
+                    <Label>Year</Label>
+                    <Input type="text" name="year" onChange={this.handleTextBoxChange} />
+                </FormGroup>
+                <FormGroup>
+                    <Label>Image URL</Label>
+                    <Input type="text" name="imageURL" onChange={this.handleTextBoxChange} />
+                </FormGroup>
+                <Button color="primary" onClick={this.handleSave}>Add Book</Button>
+            </Form>
+        );
     }
 }
 
