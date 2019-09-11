@@ -6,11 +6,12 @@ import * as serviceWorker from './serviceWorker';
 import { BaseLayout } from './components/BaseLayout'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import AddBook from './components/AddBook'
-import BookList from './components/BookList'
+import OldBookList from './components/OldBookList'
 import UpdateBook from './components/UpdateBook'
 import FavoriteBook from './components/FavoriteBook'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'reactstrap';
+import BookList from './components/FavoriteBook';
 
 ReactDOM.render(
     <BrowserRouter>
