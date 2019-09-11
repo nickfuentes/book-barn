@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 class UpdateBook extends Component {
 
@@ -61,25 +62,33 @@ class UpdateBook extends Component {
     }
 
     render() {
-        return <div className="add-book-form">
-            <h3>Title:</h3>
-            <input type="text" value={this.state.title} name="title" onChange={this.handleTextBoxChange} />
-
-            <h3>Genre:</h3>
-            <input type="text" value={this.state.genre} name="genre" onChange={this.handleTextBoxChange}></input>
-
-            <h3>Author:</h3>
-            <input type="text" value={this.state.author} name="author" onChange={this.handleTextBoxChange}></input>
-
-            <h3>Year:</h3>
-            <input type="text" value={this.state.year} name="year" onChange={this.handleTextBoxChange}></input>
-
-            <h3>Image URL:</h3>
-            <input type="text" value={this.state.imageURL} name="imageURL" onChange={this.handleTextBoxChange}></input>
-
-            <button onClick={this.updateBook}>Update Book</button>
-        </div>
+        return (
+            <Form>
+                <FormGroup>
+                    <Label>Title</Label>
+                    <Input type="text" value={this.state.title} name="title" onChange={this.handleTextBoxChange} />
+                </FormGroup>
+                <FormGroup>
+                    <Label>Genre</Label>
+                    <Input type="text" value={this.state.genre} name="genre" onChange={this.handleTextBoxChange} />
+                </FormGroup>
+                <FormGroup>
+                    <Label>Author</Label>
+                    <Input type="text" value={this.state.author} name="author" onChange={this.handleTextBoxChange} />
+                </FormGroup>
+                <FormGroup>
+                    <Label>Year</Label>
+                    <Input type="text" value={this.state.year} name="year" onChange={this.handleTextBoxChange} />
+                </FormGroup>
+                <FormGroup>
+                    <Label>Image URL</Label>
+                    <Input type="text" value={this.state.imageURL} name="imageURL" onChange={this.handleTextBoxChange} />
+                </FormGroup>
+                <Button color="primary" onClick={this.updateBook}>Update Book</Button>
+            </Form>
+        );
     }
 }
+
 
 export default UpdateBook

@@ -32,32 +32,6 @@
   }
 }
 
-img {
-  width: 300px;
-}
-
-.add-book-form {
-  background-color: lightblue;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 30px;
-  padding: 30px;
-}
-
-.book-div {
-  background-color: lightblue;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 30px;
-  padding: 30px;
-}
-
 .nav {
   background-color: lightgoldenrodyellow;
-}
-
-.btn {
-  margin: 20px;
 }
