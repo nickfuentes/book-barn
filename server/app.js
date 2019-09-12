@@ -19,7 +19,6 @@ app.get('/', (req, res) => {
 app.post('/add-books', (req, res) => {
 
     let title = req.body.title
-    console.log("Testing")
     let genre = req.body.genre
     let author = req.body.author
     let year = req.body.year

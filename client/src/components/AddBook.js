@@ -52,6 +52,8 @@ function AddBook() {
                 author: bookAuthor,
                 year: bookYear,
                 imageURL: bookImageURL
+            }).then(() => {
+                this.props.history.push('/');
             })
         })
     }
