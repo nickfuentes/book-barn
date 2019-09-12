@@ -5,13 +5,13 @@ import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import { BaseLayout } from './components/BaseLayout'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import AddBook from './components/AddBook'
+import AddBook from './components/OldAddBook'
 import OldBookList from './components/OldBookList'
 import UpdateBook from './components/UpdateBook'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'reactstrap';
 import BookList from './components/BookList';
-import NewAddBook from './components/NewAddBook';
+
 
 ReactDOM.render(
     <BrowserRouter>
@@ -21,7 +21,6 @@ ReactDOM.render(
                     <Route path="/" exact component={BookList} />
                     <Route path="/add-book" component={AddBook} />
                     <Route path="/update-book" component={UpdateBook} />
-                    <Route path="/new-add-book" component={NewAddBook} />
                 </Switch>
             </BaseLayout>
         </Container>
