@@ -8,10 +8,10 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import AddBook from './components/AddBook'
 import OldBookList from './components/OldBookList'
 import UpdateBook from './components/UpdateBook'
-import FavoriteBook from './components/FavoriteBook'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'reactstrap';
-import BookList from './components/FavoriteBook';
+import BookList from './components/BookList';
+import NewAddBook from './components/NewAddBook';
 
 ReactDOM.render(
     <BrowserRouter>
@@ -21,7 +21,7 @@ ReactDOM.render(
                     <Route path="/" exact component={BookList} />
                     <Route path="/add-book" component={AddBook} />
                     <Route path="/update-book" component={UpdateBook} />
-                    <Route path="/favorite-book" component={FavoriteBook} />
+                    <Route path="/new-add-book" component={NewAddBook} />
                 </Switch>
             </BaseLayout>
         </Container>

@@ -29,7 +29,7 @@ export class Menu extends Component {
                     <NavLink tag={Link} to="/add-book">Add Books</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink tag={Link} to="/favorite-book">Favorites</NavLink>
+                    <NavLink tag={Link} to="/new-add-book">New Add Book</NavLink>
                 </NavItem>
             </Nav>
         </div>
