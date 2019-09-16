@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css'
-import { Link } from 'react-router-dom'
+import {Nav} from 'react-bootstrap'
 
 function BookList() {
 
@@ -46,7 +46,7 @@ function BookList() {
                     <h4>Author: {book.author}</h4>
                     <h4>Year: {book.year}</h4>
                     <button color="primary" data-id={book.id} onClick={handleDelete}>Delete</button>
-                    <button color="primary" data-id={book.id} >Update</button>
+                    <Nav.Link href="/update-book"><button color="primary" data-id={book.id} >Update</button></Nav.Link>
                     <input type="hidden" name="id" value={book.id} />
         </div>
     })}</div>
