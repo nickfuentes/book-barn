@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import { BaseLayout } from './components/BaseLayout'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import AddBook from './components/OldAddBook'
+import AddBook from './components/AddBook'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import BookList from './components/BookList';
-import NewUpdateBook from './components/NewUpdateBook';
+import UpdateBook from './components/UpdateBook';
 
 
 ReactDOM.render(
@@ -17,7 +16,7 @@ ReactDOM.render(
                 <Switch>
                     <Route path="/" exact component={BookList} />
                     <Route path="/add-book" component={AddBook} />
-                    <Route path="/update-book" component={NewUpdateBook} />
+                    <Route path="/update-book" component={UpdateBook} />
                 </Switch>
             </BaseLayout>
     </BrowserRouter>

@@ -40,7 +40,7 @@ function AddBook() {
     const handleSave = () => {
 
         // value is in the state 
-        fetch('http://localhost:3001/add-books', {
+        fetch('http://localhost:3001/add-book', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -51,37 +51,35 @@ function AddBook() {
                 author: bookAuthor,
                 year: bookYear,
                 imageURL: bookImageURL
-            }).then(() => {
-                this.props.history.push('/');
             })
         })
     }
 
 
     return (
-        <Form>
-            <FormGroup>
-                <Label>Title</Label>
-                <Input type="text" name="title" onChange={titleHandleTextBoxChange} />
-            </FormGroup>
-            <FormGroup>
-                <Label>Genre</Label>
-                <Input type="text" name="genre" onChange={genreHandleTextBoxChange} />
-            </FormGroup>
-            <FormGroup>
-                <Label>Author</Label>
-                <Input type="text" name="author" onChange={authorHandleTextBoxChange} />
-            </FormGroup>
-            <FormGroup>
-                <Label>Year</Label>
-                <Input type="text" name="year" onChange={yearHandleTextBoxChange} />
-            </FormGroup>
-            <FormGroup>
-                <Label>Image URL</Label>
-                <Input type="text" name="imageURL" onChange={ImageURLHandleTextBoxChange} />
-            </FormGroup>
-            <Button color="primary" onClick={handleSave}>Add Book</Button>
-        </Form>
+        
+            <div>
+                <h1>Title</h1>
+                <input type="text" name="title" onChange={titleHandleTextBoxChange} />
+            
+
+                <h1>Genre</h1>
+                <input type="text" name="genre" onChange={genreHandleTextBoxChange} />
+            
+
+                <h1>Author</h1>
+                <input type="text" name="author" onChange={authorHandleTextBoxChange} />
+            
+
+                <h1>Year</h1>
+                <input type="text" name="year" onChange={yearHandleTextBoxChange} />
+            
+
+                <h1>Image URL</h1>
+                <input type="text" name="imageURL" onChange={ImageURLHandleTextBoxChange} />
+            
+            <button color="primary" onClick={handleSave}>Add Book</button>
+            </div>
     );
 }
 

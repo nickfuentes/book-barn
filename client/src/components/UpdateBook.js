@@ -1,40 +1,34 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../App.css';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
-class UpdateBook extends Component {
+function UpdateBook() {
 
-    constructor() {
-        super()
-        this.state = {
-            title: '',
-            genre: '',
-            author: '',
-            year: '',
-            imageURL: ''
-        }
+    const [bookTitle, setTitle] = useState("")
+    const [bookGenre, setGenre] = useState("")
+    const [bookAuthor, setAuthor] = useState("")
+    const [bookYear, setYear] = useState("")
+    const [bookImageURL, setImageURL] = useState("")
 
-        this.fetchBook()
-    }
 
-    fetchBook = () => {
+    useEffect(() => {
+        console.log('useEffect')
+        fetchBook()
+    }, []);
+
+    const fetchBook = () => {
 
         fetch('http://localhost:3001/update-book')
             .then(response => response.json())
             .then(book => {
-
-                this.setState({
-                    title: book.title,
-                    genre: book.genre,
-                    author: book.author,
-                    year: book.year,
-                    imageURL: book.imageURL
-                })
+                setTitle(book.title)
+                setGenre(book.genre)
+                setAuthor(book.author)
+                setYear(book.year)
+                setImageURL(book.imageURL)
             })
     }
 
-
-    updateBook = () => {
+    const updateBook = () => {
 
         // value is in the state 
         fetch('http://localhost:3001/update-book', {
@@ -43,52 +37,64 @@ class UpdateBook extends Component {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                title: this.state.title,
-                genre: this.state.genre,
-                author: this.state.author,
-                year: this.state.year,
-                imageURL: this.state.imageURL
+                title: bookTitle,
+                genre: bookGenre,
+                author: bookAuthor,
+                year: bookYear,
+                imageURL: bookImageURL
             })
-        }).then(() => {
-            this.props.history.push("/all-books")
         })
     }
 
-    handleTextBoxChange = (e) => {
 
-        this.setState({
-            [e.target.name]: e.target.value
-        })
+    const titleHandleTextBoxChange = (e) => {
+
+        setTitle(e.target.value)
+        console.log(e.target.value)
     }
 
-    render() {
-        return (
-            <Form>
-                <FormGroup>
-                    <Label>Title</Label>
-                    <Input type="text" value={this.state.title} name="title" onChange={this.handleTextBoxChange} />
-                </FormGroup>
-                <FormGroup>
-                    <Label>Genre</Label>
-                    <Input type="text" value={this.state.genre} name="genre" onChange={this.handleTextBoxChange} />
-                </FormGroup>
-                <FormGroup>
-                    <Label>Author</Label>
-                    <Input type="text" value={this.state.author} name="author" onChange={this.handleTextBoxChange} />
-                </FormGroup>
-                <FormGroup>
-                    <Label>Year</Label>
-                    <Input type="text" value={this.state.year} name="year" onChange={this.handleTextBoxChange} />
-                </FormGroup>
-                <FormGroup>
-                    <Label>Image URL</Label>
-                    <Input type="text" value={this.state.imageURL} name="imageURL" onChange={this.handleTextBoxChange} />
-                </FormGroup>
-                <Button color="primary" onClick={this.updateBook}>Update Book</Button>
-            </Form>
-        );
+    const genreHandleTextBoxChange = (e) => {
+
+        setGenre(e.target.value)
+
     }
+    const authorHandleTextBoxChange = (e) => {
+
+        setAuthor(e.target.value)
+
+    }
+    const yearHandleTextBoxChange = (value) => {
+
+        setYear(value)
+
+    }
+    const ImageURLHandleTextBoxChange = (e) => {
+
+        setImageURL(e.target.value)
+
+    }
+
+    return (
+       <div>
+    
+        <h1>Title</h1>
+        <input type="text" value={bookTitle} name="title" onChange={titleHandleTextBoxChange} />
+    
+        <h1>Genre</h1>
+        <input type="text" value={bookGenre} name="genre" onChange={genreHandleTextBoxChange} />
+    
+        <h1>Author</h1>
+        <input type="text" value={bookAuthor} name="author" onChange={authorHandleTextBoxChange} />
+    
+        <h1>Year</h1>
+        <input type="text" value={bookYear} name="year" onChange={(e) => yearHandleTextBoxChange(e.target.value)} />
+    
+        <h1>Image URL</h1>
+        <input type="text" value={bookImageURL} name="imageURL" onChange={ImageURLHandleTextBoxChange} />
+            
+        <button color="primary" onClick={() => updateBook()}>UpdateBook</button>
+        </div>
+    );
 }
-
 
 export default UpdateBook

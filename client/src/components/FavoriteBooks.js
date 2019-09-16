@@ -1,8 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import {
-    Card, CardImg, CardBody,
-    CardTitle, CardSubtitle, Button
-} from 'reactstrap';
 import '../App.css'
 
 function FavoriteBooks() {

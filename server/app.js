@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 })
 
 // Add new books to the postgres database
-app.post('/add-books', (req, res) => {
+app.post('/add-book', (req, res) => {
 
     let title = req.body.title
     let genre = req.body.genre
