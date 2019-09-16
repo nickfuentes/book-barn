@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import '../App.css';
 
 function NewUpdateBook() {
@@ -76,29 +75,29 @@ function NewUpdateBook() {
     }
 
     return (
-        <Form>
-            <FormGroup>
-                <Label>Title</Label>
-                <Input type="text" value={bookTitle} name="title" onChange={titleHandleTextBoxChange} />
-            </FormGroup>
-            <FormGroup>
-                <Label>Genre</Label>
-                <Input type="text" value={bookGenre} name="genre" onChange={genreHandleTextBoxChange} />
-            </FormGroup>
-            <FormGroup>
-                <Label>Author</Label>
-                <Input type="text" value={bookAuthor} name="author" onChange={authorHandleTextBoxChange} />
-            </FormGroup>
-            <FormGroup>
-                <Label>Year</Label>
-                <Input type="text" value={bookYear} name="year" onChange={(e) => yearHandleTextBoxChange(e.target.value)} />
-            </FormGroup>
-            <FormGroup>
-                <Label>Image URL</Label>
-                <Input type="text" value={bookImageURL} name="imageURL" onChange={ImageURLHandleTextBoxChange} />
-            </FormGroup>
-            <Button color="primary" onClick={() => updateBook()}>UpdateBook</Button>
-        </Form>
+       <div>
+           
+                <h1>Title</h1>
+                <input type="text" value={bookTitle} name="title" onChange={titleHandleTextBoxChange} />
+            
+            
+                <h1>Genre</h1>
+                <input type="text" value={bookGenre} name="genre" onChange={genreHandleTextBoxChange} />
+            
+           
+                <h1>Author</h1>
+                <input type="text" value={bookAuthor} name="author" onChange={authorHandleTextBoxChange} />
+            
+           
+                <h1>Year</h1>
+                <input type="text" value={bookYear} name="year" onChange={(e) => yearHandleTextBoxChange(e.target.value)} />
+            
+           
+                <h1>Image URL</h1>
+                <input type="text" value={bookImageURL} name="imageURL" onChange={ImageURLHandleTextBoxChange} />
+            
+            <button color="primary" onClick={() => updateBook()}>UpdateBook</button>
+            </div>
     );
 }
 

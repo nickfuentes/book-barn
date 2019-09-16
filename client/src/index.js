@@ -7,14 +7,12 @@ import { BaseLayout } from './components/BaseLayout'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import AddBook from './components/OldAddBook'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container } from 'reactstrap';
 import BookList from './components/BookList';
 import NewUpdateBook from './components/NewUpdateBook';
 
 
 ReactDOM.render(
     <BrowserRouter>
-        <Container>
             <BaseLayout>
                 <Switch>
                     <Route path="/" exact component={BookList} />
@@ -22,7 +20,6 @@ ReactDOM.render(
                     <Route path="/update-book" component={NewUpdateBook} />
                 </Switch>
             </BaseLayout>
-        </Container>
     </BrowserRouter>
     , document.getElementById('root'));
 
