@@ -1,29 +1,29 @@
-import React, { useState } from "react";
-import "../App.css";
+import React, { useState } from "react"
+import "../App.css"
 
 function AddBook(props) {
-  const [bookTitle, setTitle] = useState("");
-  const [bookGenre, setGenre] = useState("");
-  const [bookAuthor, setAuthor] = useState("");
-  const [bookYear, setYear] = useState("");
-  const [bookImageURL, setImageURL] = useState("");
+  const [bookTitle, setTitle] = useState("")
+  const [bookGenre, setGenre] = useState("")
+  const [bookAuthor, setAuthor] = useState("")
+  const [bookYear, setYear] = useState("")
+  const [bookImageURL, setImageURL] = useState("")
 
   const titleHandleTextBoxChange = e => {
-    setTitle(e.target.value);
-  };
+    setTitle(e.target.value)
+  }
 
   const genreHandleTextBoxChange = e => {
-    setGenre(e.target.value);
-  };
+    setGenre(e.target.value)
+  }
   const authorHandleTextBoxChange = e => {
-    setAuthor(e.target.value);
-  };
+    setAuthor(e.target.value)
+  }
   const yearHandleTextBoxChange = e => {
-    setYear(e.target.value);
-  };
+    setYear(e.target.value)
+  }
   const ImageURLHandleTextBoxChange = e => {
-    setImageURL(e.target.value);
-  };
+    setImageURL(e.target.value)
+  }
 
   const handleSave = () => {
     // value is in the state
@@ -40,10 +40,10 @@ function AddBook(props) {
         imageURL: bookImageURL
       })
     }).then(() => {
-      props.history.push("/");
-      console.log(props);
-    });
-  };
+      props.history.push("/")
+      console.log(props)
+    })
+  }
 
   return (
     <div>
@@ -70,7 +70,7 @@ function AddBook(props) {
         Add Book
       </button>
     </div>
-  );
+  )
 }
 
-export default AddBook;
+export default AddBook
