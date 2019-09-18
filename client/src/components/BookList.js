@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from "react";
-import "../App.css";
-import { Nav } from "react-bootstrap";
+import React, { useState, useEffect } from "react"
+import "../App.css"
+import { Nav } from "react-bootstrap"
 
 function BookList() {
-  const [books, setBooks] = useState([]);
+  const [books, setBooks] = useState([])
 
   useEffect(() => {
-    fetchBooks();
-  });
+    fetchBooks()
+  })
 
   const fetchBooks = () => {
     fetch("http://localhost:3001/")
       .then(response => response.json())
       .then(books => {
-        setBooks(books);
-      });
-  };
+        setBooks(books)
+      })
+  }
 
   const handleDelete = e => {
     // value is in the state
@@ -27,8 +27,8 @@ function BookList() {
       body: JSON.stringify({
         id: e.target.dataset.id
       })
-    });
-  };
+    })
+  }
 
   // const handleChangeToUpdate = () => {
   //     <Link to="/update-book">About</Link>
@@ -55,10 +55,10 @@ function BookList() {
             </Nav.Link>
             <input type="hidden" name="id" value={book.id} />
           </div>
-        );
+        )
       })}
     </div>
-  );
+  )
 }
 
-export default BookList;
+export default BookList

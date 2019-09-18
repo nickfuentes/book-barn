@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Navbar, Nav } from "react-bootstrap";
+import React, { Component } from "react"
+import { Navbar, Nav } from "react-bootstrap"
 
 export class Menu extends Component {
   render() {
@@ -16,13 +16,13 @@ export class Menu extends Component {
           </Navbar.Collapse>
         </Navbar>
       </div>
-    );
+    )
   }
 }
 
 export class Footer extends Component {
   render() {
-    return <div>Footer</div>;
+    return <div>Footer</div>
   }
 }
 
@@ -34,6 +34,6 @@ export class BaseLayout extends Component {
         {this.props.children}
         <Footer />
       </div>
-    );
+    )
   }
 }
